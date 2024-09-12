@@ -243,7 +243,7 @@ class Seeded_Scenario_Generator(object):
                     collide=False
                     break
 
-                past_start_points = np.array(scenario)[:,2:4].astype(np.float)
+                past_start_points = np.array(scenario)[:,2:4].astype(float)
                 closet_distance_to_other_start_point = 999
                 for past_start_point in past_start_points:
                     distance = np.linalg.norm(past_start_point - np.array([start_x,start_y]) )
@@ -286,7 +286,7 @@ class Seeded_Scenario_Generator(object):
                     collide=False
                     break
 
-                past_goal_points = np.array(scenario)[:,4:6].astype(np.float)
+                past_goal_points = np.array(scenario)[:,4:6].astype(float)
                 closet_distance_to_other_goal_point = 999
                 for past_goal_point in past_goal_points:
                     distance = np.linalg.norm(past_goal_point - np.array([goal_x,goal_y]) )
@@ -400,7 +400,7 @@ class Seeded_Population_Scenario_Generator(object):
                     collide=False
                     break
 
-                past_start_points = np.array(scenario)[:,2:4].astype(np.float)
+                past_start_points = np.array(scenario)[:,2:4].astype(float)
                 closet_distance_to_other_start_point = 999
                 for past_start_point in past_start_points:
                     distance = np.linalg.norm(past_start_point - np.array([start_x,start_y]) )
@@ -461,7 +461,7 @@ class Seeded_Population_Scenario_Generator(object):
                     collide=False
                     break
 
-                past_goal_points = np.array(scenario)[:,4:6].astype(np.float)
+                past_goal_points = np.array(scenario)[:,4:6].astype(float)
                 closet_distance_to_other_goal_point = 999
                 for past_goal_point in past_goal_points:
                     distance = np.linalg.norm(past_goal_point - np.array([goal_x,goal_y]) )

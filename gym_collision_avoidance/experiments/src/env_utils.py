@@ -8,7 +8,7 @@ from baselines.common.vec_env.dummy_vec_env import DummyVecEnv
 def create_env():
     import tensorflow as tf
     tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
-    tf.Session().__enter__()
+    tf.compat.v1.Session().__enter__()
     num_envs = 1
     ncpu = 1
     

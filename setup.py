@@ -9,7 +9,7 @@ setup(
     keywords='robotics planning gym rl',  # Optional
     python_requires='>=3.0, <4',
     install_requires=[
-        'tensorflow==1.15.2',
+        'tensorflow',
         'Pillow',
         'PyOpenGL',
         'pyyaml',
@@ -21,7 +21,7 @@ setup(
         'moviepy',
         'pandas',
         'networkx',
-        'torch===1.3.1', #compatibility #used 1.2 instead of 1.3 #cuda compatibilty
+        'torch===1.11.0', #compatibility #used 1.2 instead of 1.3 #cuda compatibilty
         'attrdict',
     ],
 )
