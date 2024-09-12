@@ -35,7 +35,7 @@ Loading Attention Generator...
 class naviGAN(object):
     def __init__(self):
 
-        CHECKPOINT = '/home/sam/proj/robot_software/social_navigation/src/navigan/models/benchmark_zara1_with_model.pt'
+        CHECKPOINT = '/home/immanuel/Social-Navigation-Simulator/gym_collision_avoidance/envs/policies/NAVIGAN/models/benchmark_zara1_with_model.pt'
 
         self.obs_rate = 0.4#0.4
         self.goal_reached = False
