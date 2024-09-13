@@ -366,7 +366,8 @@ def main():
         overall_record['presence'] = np.array( presence_list ) 
         #overall_record['presence'] = np.array( [ [[0,overall_record['timeout']/overall_record['timestep_size']]] * len(prev_agents) ] ) 
         overall_record['arrival'] = np.array( [ agent.arrival_timestep for agent in prev_agents ] )
-        overall_record['collision'] = np.array( [ agent.collision_timestep for agent in prev_agents ] )
+        #overall_record['collision'] = np.array( [ agent.collision_timestep for agent in prev_agents ] )
+        overall_record['collision'] = np.array([agent.collision_timestep[0] if isinstance(agent.collision_timestep, list) and agent.collision_timestep else -1 for agent in prev_agents])
         overall_record['trajectory']  = np.array( traj_list )
         
         #check data invariants
