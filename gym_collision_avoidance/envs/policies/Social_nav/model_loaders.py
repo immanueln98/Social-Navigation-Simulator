@@ -3,7 +3,7 @@ import sys
 sys.path.insert(0, '/home/immanuel/Social-Navigation-Simulator/gym_collision_avoidance/envs/policies/Social_nav/')
 
 from models import TrajectoryGenerator, IntentionForceGenerator, CombinedGenerator, TrajectoryDiscriminator
-
+import torch
 
 def get_discriminator(checkpoint, device):
     """Added for transfer learning restore from checkpoint in train_goal.py"""
@@ -87,7 +87,8 @@ def get_combined_generator(checkpoint):
         neighborhood_size=args.neighborhood_size,
         grid_size=args.grid_size,
         batch_norm=args.batch_norm)
+    print("generator obs_len",args.obs_len)
     generator.load_state_dict(checkpoint['g_state'])
-
-    generator.train()
+    generator.to(device='cuda' if torch.cuda.is_available() else 'cpu')
+    generator.eval()
     return generator

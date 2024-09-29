@@ -7,17 +7,18 @@ import torch.nn as nn
 
 def make_mlp(dim_list, activation='relu', batch_norm=True, dropout=0):
     layers = torch.nn.ModuleList()
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     for dim_in, dim_out in zip(dim_list[:-1], dim_list[1:]):
-        layers.append(nn.Linear(dim_in, dim_out))
+        layers.append(nn.Linear(dim_in, dim_out).to(device))
         if batch_norm:
-            layers.append(nn.BatchNorm1d(dim_out))
+            layers.append(nn.BatchNorm1d(dim_out).to(device))
         if activation == 'relu':
-            layers.append(nn.ReLU())
+            layers.append(nn.ReLU().to(device))
         elif activation == 'leakyrelu':
-            layers.append(nn.LeakyReLU())
+            layers.append(nn.LeakyReLU().to(device))
         if dropout > 0:
-            layers.append(nn.Dropout(p=dropout))
-    return nn.Sequential(*layers)
+            layers.append(nn.Dropout(p=dropout).to(device))
+    return nn.Sequential(*layers).to(device)
 
 
 def get_noise(shape, noise_type, device):
@@ -37,7 +38,7 @@ class Encoder(nn.Module):
             dropout=0.0, return_c=False
     ):
         super(Encoder, self).__init__()
-        self.device = torch.device("cpu")
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.mlp_dim = 1024
         self.h_dim = h_dim
         self.embedding_dim = embedding_dim
@@ -89,7 +90,7 @@ class Decoder(nn.Module):
             neighborhood_size=2.0, grid_size=8
     ):
         super(Decoder, self).__init__()
-
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.seq_len = seq_len
         self.mlp_dim = mlp_dim
         self.h_dim = h_dim
@@ -183,7 +184,7 @@ class PoolHiddenNet(nn.Module):
             activation='relu', batch_norm=True, dropout=0.0
     ):
         super(PoolHiddenNet, self).__init__()
-
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.mlp_dim = 1024
         self.h_dim = h_dim
         self.bottleneck_dim = bottleneck_dim
@@ -251,6 +252,7 @@ class SocialPooling(nn.Module):
     ):
         super(SocialPooling, self).__init__()
         self.h_dim = h_dim
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.grid_size = grid_size
         self.neighborhood_size = neighborhood_size
         if pool_dim:
@@ -358,7 +360,7 @@ class TrajectoryGenerator(nn.Module):
 
         if pooling_type and pooling_type.lower() == 'none':
             pooling_type = None
-        self.device = torch.device("cpu")
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.obs_len = obs_len
         self.pred_len = pred_len
         self.mlp_dim = mlp_dim
@@ -419,6 +421,7 @@ class TrajectoryGenerator(nn.Module):
                 neighborhood_size=neighborhood_size,
                 grid_size=grid_size
             )
+        self.pool_net.to(self.device)
 
         if self.noise_dim[0] == 0:
             self.noise_dim = None
@@ -622,7 +625,7 @@ class IntentionForceGenerator(nn.Module):
             decoder_h_dim=34, mlp_dim=64, num_layers=1, dropout=0.0, bottleneck_dim=32,
             activation='relu', batch_norm=True):
         super(IntentionForceGenerator, self).__init__()
-        self.device = torch.device("cpu")
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.obs_len = obs_len
         self.pred_len = pred_len
         self.mlp_dim = mlp_dim

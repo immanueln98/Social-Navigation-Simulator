@@ -137,7 +137,7 @@ class SocialNavPolicy(InternalPolicy):
             past_all_agents_poses = poses_history[-1]     
             past_robot_pose = past_all_agents_poses[agent_index]
             print("past_robot_pose")
-            print(past_robot_pose)
+            #print(past_robot_pose)
 
            
             past_other_agent_poses = past_all_agents_poses.copy()
@@ -216,10 +216,10 @@ class SocialNavPolicy(InternalPolicy):
             print("goal_state", goal_state)
             
             # move everything to GPU
-            # obs_traj = obs_traj.cuda()
-            # obs_traj_rel = obs_traj_rel.cuda()
-            # seq_start_end = seq_start_end.cuda()
-            # goals_rel = goals_rel.cuda()
+            obs_traj = obs_traj.cuda()
+            obs_traj_rel = obs_traj_rel.cuda()
+            seq_start_end = seq_start_end.cuda()
+            goal_state = goal_state.cuda()
             #obs_traj_rel = abs_to_relative(obs_traj)
             #obs_traj_rel = obs_traj - obs_traj[0,:,:]
             pred_traj_fake = self.generator(obs_traj, obs_traj_rel, seq_start_end, goal_state)
@@ -293,7 +293,7 @@ class SocialNavPolicy(InternalPolicy):
         #if speed_global_frame > agents[agent_index].pref_speed: speed_global_frame = agents[agent_index].pref_speed
 
         if speed_global_frame > 1.5: speed_global_frame = 1.5
-        if speed_global_frame < 0.5: speed_global_frame = 0.5
+        #if speed_global_frame < 0.5: speed_global_frame = 0.5
 
         #But in reality, the format of action is [speed, heading_delta]
 

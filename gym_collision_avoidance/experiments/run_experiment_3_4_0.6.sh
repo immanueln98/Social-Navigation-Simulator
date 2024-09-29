@@ -128,7 +128,7 @@ cd $DIR
 
 # python3 src/run_experiment_1.py --output_name "exp4_0.6_SOCIALGAN_SLSTM" --experiment_num 4 --algorithm_name ["SOCIALGAN","SLSTM"] --experiment_iteration 3 --timeout 15 --population_density 0.6
 
-python3 src/run_experiment_1.py --output_name "exp4_0.6_SOCIALNAV_CVM" --experiment_num 3 --algorithm_name ["SOCIALNAV","CVM"] --experiment_iteration 4 --timeout 30 --population_density 0.2
+python3 src/run_experiment_1.py --output_name "exp4_0.6_SOCIALNAV_SLSTM" --experiment_num 3 --algorithm_name ["SOCIALNAV","SLSTM"] --experiment_iteration 4 --timeout 30 --population_density 0.2
 
 # python3 src/run_experiment_1.py --output_name "exp4_0.6_SOCIALGAN_STGCNN" --experiment_num 4 --algorithm_name ["SOCIALGAN","STGCNN"] --experiment_iteration 3 --timeout 15 --population_density 0.6
 
