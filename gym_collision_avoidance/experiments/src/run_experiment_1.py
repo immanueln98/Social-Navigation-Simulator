@@ -63,7 +63,7 @@ SOCIALFORCE = 1
 RVO         = 2 
 CADRL       = 3 
 NAVIGAN     = 4
-
+SOCIALNAV   = 5
 CVM         = 16 
 SLSTM       = 17 
 SOCIALGAN   = 18 
@@ -71,7 +71,7 @@ STGCNN      = 19
 SPEC        = 20 
 
 motion_list = [ "CVM" , "SLSTM" , "SOCIALGAN" , "STGCNN", "SPEC" ]
-navigation_list = [ "LINEAR" , "SOCIALFORCE" , "RVO" , "CADRL" ,"NAVIGAN" ]
+navigation_list = [ "LINEAR" , "SOCIALFORCE" , "RVO" , "CADRL" ,"NAVIGAN","SOCIALNAV" ]
 
 ###########################Dataset output##################################
 def add_traj(agents, trajs, dt, traj_i, max_ts):

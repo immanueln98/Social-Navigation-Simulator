@@ -506,6 +506,11 @@ policies = {
         'sensors': ['other_agents_states']
         },
 
+    'SOCIALNAV': {
+        'policy': 'SOCIALNAV',
+        'sensors': ['other_agents_states']
+        },
+
     'STGCNN': {
         'policy': 'STGCNN',
         'sensors': ['other_agents_states']

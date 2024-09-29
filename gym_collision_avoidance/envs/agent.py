@@ -36,7 +36,7 @@ class Agent(object):
         self.chosen_action_dict = {}
         self.time_since_collision = np.inf
 
-        self.collision_stop_countdown = 10 #10 * 0.1s
+        self.collision_stop_countdown = 5 #10 * 0.1s
         
         self.collision_cooldown = self.collision_stop_countdown + 20  #20 * 0.1s
         self.num_actions_to_store = 2
@@ -343,6 +343,9 @@ class Agent(object):
         # Store info about the TF btwn the ego frame and global frame before moving agent
         goal_direction = self.goal_global_frame - self.pos_global_frame 
         theta = np.arctan2(goal_direction[1], goal_direction[0])
+        # print(type(self.pos_global_frame[0]), self.pos_global_frame[0].shape if hasattr(self.pos_global_frame[0], 'shape') else None)
+        # print(type(self.pos_global_frame[1]), self.pos_global_frame[1].shape if hasattr(self.pos_global_frame[1], 'shape') else None)
+
         self.T_global_ego = np.array([[np.cos(theta), -np.sin(theta), self.pos_global_frame[0]], [np.sin(theta), np.cos(theta), self.pos_global_frame[1]], [0,0,1]])
         self.ego_to_global_theta = theta
 

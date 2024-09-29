@@ -31,7 +31,7 @@ from gym_collision_avoidance.envs.policies.ExternalPolicy import ExternalPolicy
 from gym_collision_avoidance.envs.policies.LearningPolicy import LearningPolicy
 from gym_collision_avoidance.envs.policies.CARRLPolicy import CARRLPolicy
 from gym_collision_avoidance.envs.policies.LearningPolicyGA3C import LearningPolicyGA3C
-
+from gym_collision_avoidance.envs.policies.SocialNavPolicy import SocialNavPolicy
 from gym_collision_avoidance.envs.policies.NAVIGANPolicy import NAVIGANPolicy
 from gym_collision_avoidance.envs.policies.STGCNNPolicy import STGCNNPolicy
 from gym_collision_avoidance.envs.policies.SPECPolicy import SPECPolicy
@@ -71,6 +71,7 @@ policy_dict = {
     'learning_ga3c': LearningPolicyGA3C,
     'static': StaticPolicy,
     'CADRL': CADRLPolicy,
+    'SOCIALNAV': SocialNavPolicy,
     'NAVIGAN' : NAVIGANPolicy,
     'STGCNN' : STGCNNPolicy,
     'SPEC' : SPECPolicy,

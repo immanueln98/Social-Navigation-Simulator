@@ -1,4 +1,6 @@
 from attrdict import AttrDict
+import sys 
+sys.path.insert(0, '/home/immanuel/Social-Navigation-Simulator/gym_collision_avoidance/envs/policies/Social_nav/')
 
 from models import TrajectoryGenerator, IntentionForceGenerator, CombinedGenerator, TrajectoryDiscriminator
 

@@ -15,9 +15,9 @@ cd $DIR
 
 #################################Navigation
 #########################################################################CADRL
-python3 src/run_experiment_1.py --output_name "exp3_0.3_CADRL_RVO" --experiment_num 3 --algorithm_name ["CADRL","RVO"] --experiment_iteration 3 --timeout 60 --population_density 0.3
+# python3 src/run_experiment_1.py --output_name "exp3_0.3_CADRL_RVO" --experiment_num 3 --algorithm_name ["CADRL","RVO"] --experiment_iteration 3 --timeout 60 --population_density 0.3
 
-python3 src/run_experiment_1.py --output_name "exp3_0.3_CADRL_LINEAR" --experiment_num 3 --algorithm_name ["CADRL","LINEAR"] --experiment_iteration 3 --timeout 60 --population_density 0.3
+# python3 src/run_experiment_1.py --output_name "exp3_0.3_CADRL_LINEAR" --experiment_num 3 --algorithm_name ["CADRL","LINEAR"] --experiment_iteration 3 --timeout 60 --population_density 0.3
 
 python3 src/run_experiment_1.py --output_name "exp3_0.3_CADRL_SOCIALFORCE" --experiment_num 3 --algorithm_name ["CADRL","SOCIALFORCE"] --experiment_iteration 3 --timeout 60 --population_density 0.3
 

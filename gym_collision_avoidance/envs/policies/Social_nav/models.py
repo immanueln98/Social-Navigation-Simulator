@@ -676,6 +676,8 @@ class IntentionForceGenerator(nn.Module):
         if goal_point is None:
             goal_point = torch.zeros((1, obs_traj.shape[1], 2), device=self.device)
             # obs_traj[-1].reshape(1, batch, 2)
+        # print(final_encoder_h.shape)
+        # print(goal_point.shape)
         final_encoder_h = torch.cat([final_encoder_h, goal_point], dim=2)
         # Pad cell tensor with zeros to make dims of h and c equal which is needed by decoder's input
         final_encoder_c = torch.cat([final_encoder_c, torch.zeros((1, obs_traj.shape[1], 2), device=self.device)],

@@ -19,15 +19,15 @@ cd $DIR
 #python3 src/run_experiment_1.py --output_name "exp2_0.1_SOCIALFORCE" --experiment_num 2 --algorithm_name "SOCIALFORCE" --experiment_iteration 3 --timeout 10 --population_density 0.1
 
 ##############################################################################
-python3 src/run_experiment_1.py --output_name "exp1_ETH_SOCIALFORCE" --experiment_num 1 --algorithm_name "SOCIALFORCE" --experiment_iteration 20 --timeout 120 --dataset_name "ETH"
+# python3 src/run_experiment_1.py --output_name "exp1_ETH_SOCIALFORCE" --experiment_num 1 --algorithm_name "SOCIALFORCE" --experiment_iteration 20 --timeout 120 --dataset_name "ETH"
 
-python3 src/run_experiment_1.py --output_name "exp1_HOTEL_SOCIALFORCE" --experiment_num 1 --algorithm_name "SOCIALFORCE" --experiment_iteration 20 --timeout 120 --dataset_name "HOTEL"
+# python3 src/run_experiment_1.py --output_name "exp1_HOTEL_SOCIALFORCE" --experiment_num 1 --algorithm_name "SOCIALFORCE" --experiment_iteration 20 --timeout 120 --dataset_name "HOTEL"
 
-python3 src/run_experiment_1.py --output_name "exp1_UNIV_SOCIALFORCE" --experiment_num 1 --algorithm_name "SOCIALFORCE" --experiment_iteration 5  --timeout 120 --dataset_name "UNIV"
+# python3 src/run_experiment_1.py --output_name "exp1_UNIV_SOCIALFORCE" --experiment_num 1 --algorithm_name "SOCIALFORCE" --experiment_iteration 5  --timeout 120 --dataset_name "UNIV"
 
-python3 src/run_experiment_1.py --output_name "exp1_ZARA1_SOCIALFORCE" --experiment_num 1 --algorithm_name "SOCIALFORCE" --experiment_iteration 20 --timeout 120 --dataset_name "ZARA1"
+#python3 src/run_experiment_1.py --output_name "exp1_ZARA1_SOCIALFORCE" --experiment_num 1 --algorithm_name "SOCIALFORCE" --experiment_iteration 20 --timeout 120 --dataset_name "ZARA1"
 
-python3 src/run_experiment_1.py --output_name "exp1_ZARA2_SOCIALFORCE" --experiment_num 1 --algorithm_name "SOCIALFORCE" --experiment_iteration 20 --timeout 120 --dataset_name "ZARA2"
+#python3 src/run_experiment_1.py --output_name "exp1_ZARA2_SOCIALFORCE" --experiment_num 1 --algorithm_name "SOCIALFORCE" --experiment_iteration 20 --timeout 120 --dataset_name "ZARA2"
 
 #########################################################################
 python3 src/run_experiment_1.py --output_name "exp2_0.1_SOCIALFORCE" --experiment_num 2 --algorithm_name "SOCIALFORCE" --experiment_iteration 10 --timeout 60 --population_density 0.1
